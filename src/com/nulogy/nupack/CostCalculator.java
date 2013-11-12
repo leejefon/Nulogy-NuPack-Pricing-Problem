@@ -13,6 +13,11 @@ package com.nulogy.nupack;
  */
 public class CostCalculator {
 
+	public double calculate(double basePrice, int numWorkers, Markup type) {
+		double finalPrice;
 
+		finalPrice = basePrice * (1 + type.markup());
 
+		return finalPrice;
+	}
 }

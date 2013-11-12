@@ -19,4 +19,9 @@ public class CostCalculatorTest extends TestCase {
 		CostCalculator calc = new CostCalculator();
 		assertNotNull(calc);
 	}
+
+	public void testCalculateFlatMarkup() {
+		CostCalculator calc = new CostCalculator();
+		assertEquals(calc.calculate(100, 0, Markup.FLAT), 105);
+	}
 }
