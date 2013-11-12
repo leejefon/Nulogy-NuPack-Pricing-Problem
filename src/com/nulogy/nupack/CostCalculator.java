@@ -18,8 +18,8 @@ public class CostCalculator {
 
 		finalPrice = basePrice * (1 + Markup.FLAT.markup());
 
-		finalPrice *= (1 + numWorkers * Markup.WORKER.markup());
+		finalPrice *= (1 + numWorkers * Markup.WORKER.markup() + type.markup());
 
-		return finalPrice;
+		return (double) Math.round(finalPrice * 100) / 100;
 	}
 }

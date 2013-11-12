@@ -17,6 +17,7 @@ public class CostCalculatorTest extends TestCase {
 
 	private CostCalculator calc;
 
+	@Override
 	public void setUp() {
 		calc = new CostCalculator();
 	}
@@ -26,10 +27,17 @@ public class CostCalculatorTest extends TestCase {
 	}
 
 	public void testCalculateFlatMarkup() {
-		assertEquals(calc.calculate(100, 0, Markup.ELSE), 105.00);
+		assertEquals(105.00, calc.calculate(100, 0, Markup.ELSE));
 	}
 
 	public void testCalculateWorkerMarkup() {
-		assertEquals(calc.calculate(100, 3, Markup.ELSE), 108.78);
+		assertEquals(108.78, calc.calculate(100, 3, Markup.ELSE));
+		assertEquals(111.30, calc.calculate(100, 5, Markup.ELSE));
+	}
+
+	public void testCalculateMaterialTypeMarkup() {
+		assertEquals(112.88, calc.calculate(100, 0, Markup.PHARMACEUTICAL));
+		assertEquals(118.65, calc.calculate(100, 0, Markup.FOOD));
+		assertEquals(107.10, calc.calculate(100, 0, Markup.ELECTRONICS));
 	}
 }
