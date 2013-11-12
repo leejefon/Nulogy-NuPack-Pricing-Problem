@@ -16,7 +16,9 @@ public class CostCalculator {
 	public double calculate(double basePrice, int numWorkers, Markup type) {
 		double finalPrice;
 
-		finalPrice = basePrice * (1 + type.markup());
+		finalPrice = basePrice * (1 + Markup.FLAT.markup());
+
+		finalPrice *= (1 + numWorkers * Markup.WORKER.markup());
 
 		return finalPrice;
 	}

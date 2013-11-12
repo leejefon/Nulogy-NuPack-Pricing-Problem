@@ -15,13 +15,21 @@ import junit.framework.TestCase;
  */
 public class CostCalculatorTest extends TestCase {
 
+	private CostCalculator calc;
+
+	public void setUp() {
+		calc = new CostCalculator();
+	}
+
 	public void testCreateCostCalculatorObject() {
-		CostCalculator calc = new CostCalculator();
 		assertNotNull(calc);
 	}
 
 	public void testCalculateFlatMarkup() {
-		CostCalculator calc = new CostCalculator();
-		assertEquals(calc.calculate(100, 0, Markup.FLAT), 105);
+		assertEquals(calc.calculate(100, 0, Markup.ELSE), 105.00);
+	}
+
+	public void testCalculateWorkerMarkup() {
+		assertEquals(calc.calculate(100, 3, Markup.ELSE), 108.78);
 	}
 }
