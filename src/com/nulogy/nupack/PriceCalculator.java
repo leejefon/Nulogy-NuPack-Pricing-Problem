@@ -14,6 +14,7 @@ package com.nulogy.nupack;
 public class PriceCalculator {
 
 	/**
+	 * Calculates the prices after different markup
 	 *
 	 * @param basePrice
 	 * @param numWorkers
@@ -33,6 +34,7 @@ public class PriceCalculator {
 	}
 
 	/**
+	 * Calculates the multiply factor for flat markup
 	 *
 	 * @return  The multiply factor with flatMarkup
 	 */
@@ -41,6 +43,7 @@ public class PriceCalculator {
 	}
 
 	/**
+	 * Calculates the multiply factor for all other markups combined
 	 *
 	 * @param numWorkers
 	 * @param type
