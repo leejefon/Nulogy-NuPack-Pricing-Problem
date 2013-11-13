@@ -7,8 +7,6 @@
 package com.nulogy.nupack;
 
 import junit.framework.TestCase;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 
 /**
@@ -18,8 +16,6 @@ import org.junit.rules.ExpectedException;
 public class PriceCalculatorTest extends TestCase {
 
 	private PriceCalculator price;
-
-	public ExpectedException exception = ExpectedException.none();
 
 	@Override
 	public void setUp() {

@@ -1,8 +1,11 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Markup.java
+ *
+ * Written By: Jeff Lee
+ * Created On: 2013/11/12
  */
 package com.nulogy.nupack;
+
 
 /**
  *
