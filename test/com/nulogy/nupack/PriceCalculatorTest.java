@@ -6,8 +6,8 @@
  */
 package com.nulogy.nupack;
 
+import com.nulogy.rounder.RoundingToNearestNickel;
 import junit.framework.TestCase;
-
 
 /**
  *
@@ -45,6 +45,14 @@ public class PriceCalculatorTest extends TestCase {
 		assertEquals(1591.58, price.calculate(1299.99, 3, Markup.FOOD));
 		assertEquals(6199.81, price.calculate(5432.00, 1, Markup.PHARMACEUTICAL));
 		assertEquals(13707.63, price.calculate(12456.95, 4, Markup.ELSE));
+	}
+
+	public void testCalculateCanadianRounding() throws Exception {
+		price = new PriceCalculator(new RoundingToNearestNickel());
+
+		assertEquals(1591.60, price.calculate(1299.99, 3, Markup.FOOD));
+		assertEquals(6199.80, price.calculate(5432.00, 1, Markup.PHARMACEUTICAL));
+		assertEquals(13707.65, price.calculate(12456.95, 4, Markup.ELSE));
 	}
 
 	public void testInvalidInputHandling() throws Exception {

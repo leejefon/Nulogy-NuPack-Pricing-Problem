@@ -6,12 +6,32 @@
  */
 package com.nulogy.nupack;
 
+import com.nulogy.rounder.Rounder;
+import com.nulogy.rounder.RoundingToNearestCent;
+
 
 /**
  *
  * @author Jeff Lee
  */
 public class PriceCalculator {
+
+	private Rounder rounder;
+
+	/**
+	 *
+	 */
+	public PriceCalculator() {
+		rounder = new RoundingToNearestCent();
+	}
+
+	/**
+	 *
+	 * @param rounder
+	 */
+	public PriceCalculator(Rounder rounder) {
+		this.rounder = rounder;
+	}
 
 	/**
 	 * Calculates the prices after different markup
@@ -30,7 +50,7 @@ public class PriceCalculator {
 
 		finalPrice = basePrice * flatMarkup() * otherMarkup(numWorkers, type);
 
-		return (double) Math.round(finalPrice * 100) / 100;
+		return rounder.round(finalPrice);
 	}
 
 	/**
